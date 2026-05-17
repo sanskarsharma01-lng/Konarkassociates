@@ -1,0 +1,142 @@
+import { Phone, Mail, MapPin, ArrowUp } from 'lucide-react';
+
+const quickLinks = [
+  { name: 'Home', href: '#home' },
+  { name: 'About Us', href: '#about' },
+  { name: 'Services', href: '#services' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Real Estate', href: '#real-estate' },
+  { name: 'Contact', href: '#contact' },
+];
+
+const serviceLinks = [
+  'Residential Design',
+  'Commercial Design',
+  'Interior Design',
+  'Modular Kitchen',
+  '3D Rendering',
+  'Construction',
+];
+
+export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleLinkClick = (e, href) => {
+    e.preventDefault();
+    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <footer className="bg-charcoal-950 text-white relative">
+      {/* Gold accent line */}
+      <div className="h-1 bg-gradient-gold" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {/* Company Info */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-10 h-10 bg-gradient-gold rounded-lg flex items-center justify-center">
+                <span className="text-white font-heading font-bold text-lg">K</span>
+              </div>
+              <div>
+                <h3 className="font-heading font-bold text-lg tracking-wide">KONARK</h3>
+                <p className="text-gold-400 text-[10px] tracking-[0.2em] uppercase">Associates</p>
+              </div>
+            </div>
+            <p className="text-charcoal-400 text-sm leading-relaxed mb-6">
+              Premier architecture, construction, and interior design firm. Transforming visions into extraordinary spaces since inception.
+            </p>
+            <a
+              href="tel:09827953774"
+              className="inline-flex items-center gap-2 text-gold-400 hover:text-gold-300 text-sm font-medium transition-colors"
+            >
+              <Phone size={14} />
+              098279 53774
+            </a>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-heading font-semibold text-lg mb-5 relative">
+              Quick Links
+              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-gradient-gold rounded-full" />
+            </h4>
+            <ul className="space-y-3">
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    onClick={(e) => handleLinkClick(e, link.href)}
+                    className="text-charcoal-400 hover:text-gold-400 text-sm transition-colors duration-300 hover:translate-x-1 inline-block"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="font-heading font-semibold text-lg mb-5 relative">
+              Services
+              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-gradient-gold rounded-full" />
+            </h4>
+            <ul className="space-y-3">
+              {serviceLinks.map((service) => (
+                <li key={service}>
+                  <span className="text-charcoal-400 text-sm">{service}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="font-heading font-semibold text-lg mb-5 relative">
+              Contact Us
+              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-gradient-gold rounded-full" />
+            </h4>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <MapPin size={16} className="text-gold-400 mt-0.5 flex-shrink-0" />
+                <span className="text-charcoal-400 text-sm">Konark Associates, Main Road, City Center</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone size={16} className="text-gold-400 flex-shrink-0" />
+                <a href="tel:09827953774" className="text-charcoal-400 hover:text-gold-400 text-sm transition-colors">
+                  098279 53774
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail size={16} className="text-gold-400 flex-shrink-0" />
+                <a href="mailto:info@konarkassociates.com" className="text-charcoal-400 hover:text-gold-400 text-sm transition-colors">
+                  info@konarkassociates.com
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-charcoal-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-charcoal-500 text-sm">
+            © {new Date().getFullYear()} KONARK ASSOCIATES. All rights reserved.
+          </p>
+          <button
+            onClick={scrollToTop}
+            className="w-10 h-10 rounded-full bg-gold-400/10 border border-gold-400/20 flex items-center justify-center text-gold-400 hover:bg-gradient-gold hover:text-white transition-all duration-300 hover:scale-110"
+            aria-label="Scroll to top"
+          >
+            <ArrowUp size={18} />
+          </button>
+        </div>
+      </div>
+    </footer>
+  );
+}
