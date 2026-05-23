@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, ArrowUp } from 'lucide-react';
+import logo from '../assets/logo.jpg';
 
 const quickLinks = [
   { name: 'Home', href: '#home' },
@@ -39,14 +40,8 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Company Info */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 bg-gradient-gold rounded-lg flex items-center justify-center">
-                <span className="text-white font-heading font-bold text-lg">K</span>
-              </div>
-              <div>
-                <h3 className="font-heading font-bold text-lg tracking-wide">KONARK</h3>
-                <p className="text-gold-400 text-[10px] tracking-[0.2em] uppercase">Associates</p>
-              </div>
+            <div className="mb-5">
+              <img src={logo} alt="Konark Associates Logo" className="h-14 w-auto object-contain" />
             </div>
             <p className="text-charcoal-400 text-sm leading-relaxed mb-6">
               Leading interior architect and construction firm serving Barnagar, Ujjain & Indore. Residential, commercial & bungalow design with end-to-end project delivery.

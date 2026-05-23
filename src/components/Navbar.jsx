@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
+import logo from '../assets/logo.jpg';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -44,21 +45,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <a href="#home" className="flex items-center gap-3 group" onClick={(e) => handleLinkClick(e, '#home')} aria-label="Konark Associates — Home">
-            <div className="w-10 h-10 bg-gradient-gold rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-              <span className="text-white font-heading font-bold text-lg">K</span>
-            </div>
-            <div className="text-left">
-              <span className={`block text-sm font-heading font-bold tracking-widest uppercase transition-colors duration-300 ${
-                scrolled ? 'text-charcoal-950' : 'text-white'
-              }`}>
-                Konark
-              </span>
-              <span className={`block text-[10px] tracking-[0.2em] uppercase transition-colors duration-300 ${
-                scrolled ? 'text-gold-600' : 'text-gold-300'
-              }`}>
-                Associates
-              </span>
-            </div>
+            <img src={logo} alt="Konark Associates Logo" className="h-12 w-auto object-contain transform group-hover:scale-105 transition-transform duration-300" />
           </a>
 
           <div className="hidden lg:flex items-center gap-8">

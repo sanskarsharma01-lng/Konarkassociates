@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from './assets/logo.jpg';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -21,16 +22,17 @@ function LoadingScreen() {
       <motion.div
         initial={{ scale: 0.5, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="text-center"
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className="text-center flex flex-col items-center"
       >
-        <div className="w-16 h-16 bg-gradient-gold rounded-xl flex items-center justify-center mx-auto mb-6 animate-pulse-gold">
-          <span className="text-white font-heading font-bold text-2xl">K</span>
-        </div>
-        <h2 className="font-heading text-2xl font-bold text-white tracking-widest mb-2">
-          KONARK
-        </h2>
-        <p className="text-gold-400 text-xs tracking-[0.3em] uppercase">Associates</p>
+        <motion.img
+          src={logo}
+          alt="Konark Associates"
+          className="h-28 sm:h-36 w-auto object-contain drop-shadow-[0_0_30px_rgba(212,175,55,0.3)]"
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
+        />
         <div className="mt-8 w-48 h-0.5 bg-charcoal-800 rounded-full overflow-hidden mx-auto">
           <motion.div
             className="h-full bg-gradient-gold rounded-full"
