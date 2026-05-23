@@ -50,10 +50,10 @@ export default function About() {
             </h2>
             <div className="w-20 h-1 bg-gradient-gold rounded-full mb-6" />
             <p className="text-charcoal-500 text-lg leading-relaxed mb-6">
-              <strong className="text-charcoal-800">KONARK ASSOCIATES</strong> is a premier architecture, construction, and interior design firm dedicated to creating exceptional living and working spaces. With a passion for innovative design and an unwavering commitment to quality, we bring your vision to life.
+              <strong className="text-charcoal-800">KONARK ASSOCIATES</strong> is a leading interior architect and construction firm serving Barnagar, Ujjain, and Indore. We specialize in residential and commercial building design, bungalow construction, complete interior solutions, and architectural drawing &amp; planning.
             </p>
             <p className="text-charcoal-500 leading-relaxed mb-8">
-              From conceptualization to execution, our expert team handles every aspect of your project — whether it&apos;s a modern residential home, a commercial complex, a bespoke interior, or a strategic real estate investment.
+              With a 5-star reputation and end-to-end project delivery — from concept to completion — we bring your dream space to life. Whether it&apos;s a modern residential home, a commercial complex, a bespoke interior, or renovation &amp; remodelling, our expert team handles every aspect of your project.
             </p>
 
             <div className="space-y-3">

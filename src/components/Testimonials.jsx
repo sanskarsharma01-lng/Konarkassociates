@@ -68,7 +68,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-24 bg-charcoal-50">
+    <section id="testimonials" className="py-24 bg-charcoal-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -100,18 +100,22 @@ export default function Testimonials() {
                 className="w-full"
               >
                 <Quote size={40} className="text-gold-200 mb-6 mx-auto" />
-                <p className="text-charcoal-600 text-lg sm:text-xl leading-relaxed text-center mb-8 italic">
-                  &ldquo;{testimonials[current].text}&rdquo;
-                </p>
+                <blockquote>
+                  <p className="text-charcoal-600 text-lg sm:text-xl leading-relaxed text-center mb-8 italic">
+                    &ldquo;{testimonials[current].text}&rdquo;
+                  </p>
+                </blockquote>
                 <div className="flex items-center justify-center gap-4">
                   <div className="w-14 h-14 rounded-full bg-gradient-gold flex items-center justify-center text-white font-bold text-lg">
                     {testimonials[current].avatar}
                   </div>
                   <div className="text-left">
-                    <p className="font-heading font-semibold text-charcoal-900">
-                      {testimonials[current].name}
-                    </p>
-                    <p className="text-charcoal-400 text-sm">{testimonials[current].role}</p>
+                    <cite className="not-italic">
+                      <p className="font-heading font-semibold text-charcoal-900">
+                        {testimonials[current].name}
+                      </p>
+                      <p className="text-charcoal-400 text-sm">{testimonials[current].role}</p>
+                    </cite>
                     <div className="flex gap-0.5 mt-1">
                       {[...Array(testimonials[current].rating)].map((_, i) => (
                         <Star key={i} size={14} className="fill-yellow-400 text-yellow-400" />

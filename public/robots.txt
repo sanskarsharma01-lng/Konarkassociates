@@ -1,0 +1,6 @@
+# Konark Associates — robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://konarkassociates.com/sitemap.xml

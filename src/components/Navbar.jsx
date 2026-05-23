@@ -29,10 +29,12 @@ export default function Navbar() {
   };
 
   return (
+    <header>
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
+      aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? 'bg-white/95 backdrop-blur-md shadow-lg shadow-black/5'
@@ -41,21 +43,21 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <a href="#home" className="flex items-center gap-3 group" onClick={(e) => handleLinkClick(e, '#home')}>
+          <a href="#home" className="flex items-center gap-3 group" onClick={(e) => handleLinkClick(e, '#home')} aria-label="Konark Associates — Home">
             <div className="w-10 h-10 bg-gradient-gold rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
               <span className="text-white font-heading font-bold text-lg">K</span>
             </div>
             <div className="text-left">
-              <h1 className={`text-sm font-heading font-bold tracking-widest uppercase transition-colors duration-300 ${
+              <span className={`block text-sm font-heading font-bold tracking-widest uppercase transition-colors duration-300 ${
                 scrolled ? 'text-charcoal-950' : 'text-white'
               }`}>
                 Konark
-              </h1>
-              <p className={`text-[10px] tracking-[0.2em] uppercase transition-colors duration-300 ${
+              </span>
+              <span className={`block text-[10px] tracking-[0.2em] uppercase transition-colors duration-300 ${
                 scrolled ? 'text-gold-600' : 'text-gold-300'
               }`}>
                 Associates
-              </p>
+              </span>
             </div>
           </a>
 
@@ -129,5 +131,6 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </motion.nav>
+    </header>
   );
 }

@@ -5,7 +5,7 @@ import { Phone, Mail, MapPin, Clock, Send, Globe, Camera, MessageCircle, Briefca
 const contactInfo = [
   { icon: Phone, label: 'Phone', value: '098279 53774', href: 'tel:09827953774' },
   { icon: Mail, label: 'Email', value: 'info@konarkassociates.com', href: 'mailto:info@konarkassociates.com' },
-  { icon: MapPin, label: 'Office', value: 'Konark Associates, Main Road, City Center', href: null },
+  { icon: MapPin, label: 'Office', value: 'Konark Associates, Main Road, Barnagar, Madhya Pradesh', href: null },
   { icon: Clock, label: 'Working Hours', value: 'Mon - Sat: 9:00 AM - 7:00 PM', href: null },
 ];
 
@@ -45,7 +45,7 @@ export default function Contact() {
           </h2>
           <div className="w-20 h-1 bg-gradient-gold rounded-full mx-auto mb-6" />
           <p className="text-charcoal-500 max-w-2xl mx-auto text-lg">
-            Ready to start your project? Get in touch with our team for a free consultation.
+            Ready to start your project? Get in touch with our team in Ujjain, Indore & Barnagar for a free consultation.
           </p>
         </motion.div>
 
@@ -169,7 +169,7 @@ export default function Contact() {
               <div className="relative text-center">
                 <MapPin size={40} className="text-gold-400 mx-auto mb-2" />
                 <p className="text-charcoal-600 font-medium">Google Maps</p>
-                <p className="text-charcoal-400 text-sm">Konark Associates Office Location</p>
+                <p className="text-charcoal-400 text-sm">Konark Associates — Barnagar, Ujjain, Indore</p>
               </div>
             </div>
 

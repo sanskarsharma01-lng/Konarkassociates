@@ -47,7 +47,7 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 bg-gradient-dark relative overflow-hidden">
+    <section id="why-us" className="py-24 bg-gradient-dark relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{

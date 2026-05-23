@@ -10,12 +10,14 @@ const quickLinks = [
 ];
 
 const serviceLinks = [
-  'Residential Design',
-  'Commercial Design',
-  'Interior Design',
-  'Modular Kitchen',
-  '3D Rendering',
-  'Construction',
+  'Residential Building Design & Construction',
+  'Commercial Building Design & Construction',
+  'Bungalow Design & Construction',
+  'Construction with Material Supply',
+  'Complete Interior Design & Construction',
+  'Architectural Drawing & Planning',
+  'Interior Architecture Consultation',
+  'Renovation & Remodelling',
 ];
 
 export default function Footer() {
@@ -47,7 +49,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-charcoal-400 text-sm leading-relaxed mb-6">
-              Premier architecture, construction, and interior design firm. Transforming visions into extraordinary spaces since inception.
+              Leading interior architect and construction firm serving Barnagar, Ujjain & Indore. Residential, commercial & bungalow design with end-to-end project delivery.
             </p>
             <a
               href="tel:09827953774"
@@ -59,6 +61,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
+          <nav aria-label="Footer navigation">
           <div>
             <h4 className="font-heading font-semibold text-lg mb-5 relative">
               Quick Links
@@ -78,8 +81,10 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+          </nav>
 
           {/* Services */}
+          <nav aria-label="Services">
           <div>
             <h4 className="font-heading font-semibold text-lg mb-5 relative">
               Services
@@ -93,6 +98,7 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+          </nav>
 
           {/* Contact Info */}
           <div>
@@ -103,7 +109,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-gold-400 mt-0.5 flex-shrink-0" />
-                <span className="text-charcoal-400 text-sm">Konark Associates, Main Road, City Center</span>
+                <span className="text-charcoal-400 text-sm">Konark Associates, Main Road, Barnagar, Madhya Pradesh</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-gold-400 flex-shrink-0" />

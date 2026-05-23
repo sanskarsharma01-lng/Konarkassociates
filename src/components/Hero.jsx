@@ -14,8 +14,9 @@ export default function Hero() {
       <div className="absolute inset-0">
         <img
           src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80"
-          alt="Modern luxury architecture"
+          alt="Konark Associates — Modern luxury architecture design in Ujjain, Indore and Barnagar"
           className="w-full h-full object-cover"
+          fetchpriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/70 via-charcoal-950/50 to-charcoal-950/80" />
       </div>
@@ -45,7 +46,7 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        <motion.h2
+        <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -54,7 +55,7 @@ export default function Hero() {
           Designing Dreams
           <br />
           <span className="text-gradient-gold">Into Reality</span>
-        </motion.h2>
+        </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -62,8 +63,9 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-lg sm:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
+          Top-rated interior architect &amp; construction company in Ujjain, Indore &amp; Barnagar.
           Transforming visions into extraordinary spaces through innovative architecture,
-          precision construction, stunning interiors & smart real estate solutions.
+          precision construction, stunning interiors &amp; smart real estate solutions.
         </motion.p>
 
         <motion.div
