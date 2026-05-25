@@ -28,14 +28,14 @@ function LoadingScreen() {
         <motion.img
           src={logo}
           alt="Konark Associates"
-          className="h-28 sm:h-36 w-auto object-contain drop-shadow-[0_0_30px_rgba(212,175,55,0.3)]"
+          className="h-28 sm:h-36 w-auto object-contain drop-shadow-[0_0_30px_rgba(43,188,179,0.3)]"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
         />
         <div className="mt-8 w-48 h-0.5 bg-charcoal-800 rounded-full overflow-hidden mx-auto">
           <motion.div
-            className="h-full bg-gradient-gold rounded-full"
+            className="h-full bg-gradient-teal rounded-full"
             initial={{ width: '0%' }}
             animate={{ width: '100%' }}
             transition={{ duration: 1.5, ease: 'easeInOut' }}

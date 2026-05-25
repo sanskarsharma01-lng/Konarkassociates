@@ -47,13 +47,13 @@ export default function RealEstate() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block text-gold-500 font-semibold text-sm tracking-widest uppercase mb-4">
+          <span className="inline-block text-teal-500 font-semibold text-sm tracking-widest uppercase mb-4">
             Real Estate
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal-950 mb-4">
-            Property <span className="text-gradient-gold">Showcase</span>
+            Property <span className="text-gradient-teal">Showcase</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-gold rounded-full mx-auto mb-6" />
+          <div className="w-20 h-1 bg-gradient-teal rounded-full mx-auto mb-6" />
           <p className="text-charcoal-500 max-w-2xl mx-auto text-lg">
             Explore premium residential properties — from cozy 1 BHK apartments to luxurious 4 BHK penthouses. Buy & sell with confidence.
           </p>
@@ -68,7 +68,7 @@ export default function RealEstate() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
               whileHover={{ y: -8 }}
-              className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:shadow-gold-400/15 border border-charcoal-100 transition-all duration-300"
+              className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:shadow-teal-400/15 border border-charcoal-100 transition-all duration-300"
             >
               <div className="relative overflow-hidden h-48">
                 <img
@@ -77,7 +77,7 @@ export default function RealEstate() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   loading="lazy"
                 />
-                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-gradient-gold text-white text-xs font-bold tracking-wider">
+                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-gradient-teal text-white text-xs font-bold tracking-wider">
                   {prop.type}
                 </div>
                 <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-charcoal-900 text-xs font-bold">
@@ -125,7 +125,7 @@ export default function RealEstate() {
                 e.preventDefault();
                 document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="inline-flex items-center gap-2 bg-gradient-gold text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-gold-400/30 transition-all duration-300 hover:scale-105 group"
+              className="inline-flex items-center gap-2 bg-gradient-teal text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-teal-400/30 transition-all duration-300 hover:scale-105 group"
             >
               Contact for Property Deals
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />

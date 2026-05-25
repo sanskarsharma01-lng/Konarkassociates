@@ -30,13 +30,13 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="inline-block text-gold-500 font-semibold text-sm tracking-widest uppercase mb-4">
+          <span className="inline-block text-teal-500 font-semibold text-sm tracking-widest uppercase mb-4">
             Portfolio
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal-950 mb-4">
-            Featured <span className="text-gradient-gold">Projects</span>
+            Featured <span className="text-gradient-teal">Projects</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-gold rounded-full mx-auto mb-6" />
+          <div className="w-20 h-1 bg-gradient-teal rounded-full mx-auto mb-6" />
           <p className="text-charcoal-500 max-w-2xl mx-auto text-lg">
             Explore our portfolio of stunning residential, commercial, and interior design projects.
           </p>
@@ -50,8 +50,8 @@ export default function Projects() {
               onClick={() => setActive(cat)}
               className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                 active === cat
-                  ? 'bg-gradient-gold text-white shadow-lg shadow-gold-400/25'
-                  : 'bg-charcoal-50 text-charcoal-600 hover:bg-gold-50 hover:text-gold-700'
+                  ? 'bg-gradient-teal text-white shadow-lg shadow-teal-400/25'
+                  : 'bg-charcoal-50 text-charcoal-600 hover:bg-teal-50 hover:text-teal-700'
               }`}
             >
               {cat}
@@ -81,12 +81,12 @@ export default function Projects() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/80 via-charcoal-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                  <span className="inline-block px-3 py-1 rounded-full bg-gold-400/20 text-gold-300 text-xs font-medium mb-2 backdrop-blur-sm border border-gold-400/20">
+                  <span className="inline-block px-3 py-1 rounded-full bg-teal-400/20 text-teal-300 text-xs font-medium mb-2 backdrop-blur-sm border border-teal-400/20">
                     {project.category}
                   </span>
                   <h3 className="text-white font-heading text-lg font-semibold flex items-center gap-2">
                     {project.title}
-                    <ArrowUpRight size={16} className="text-gold-400" />
+                    <ArrowUpRight size={16} className="text-teal-400" />
                   </h3>
                 </div>
               </motion.div>

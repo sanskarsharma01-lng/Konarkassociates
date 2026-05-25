@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-gold-50: #fdf9f0;
-  --color-gold-100: #f9f0db;
-  --color-gold-200: #f2ddb3;
-  --color-gold-300: #e8c67e;
-  --color-gold-400: #d4af37;
-  --color-gold-500: #c9a033;
-  --color-gold-600: #b8860b;
-  --color-gold-700: #96690e;
-  --color-gold-800: #7a5414;
-  --color-gold-900: #654616;
-  --color-gold-950: #3a240a;
+  --color-teal-50: #e6f7f6;
+  --color-teal-100: #ccefed;
+  --color-teal-200: #99dfdb;
+  --color-teal-300: #66cfc9;
+  --color-teal-400: #2BBCB3;
+  --color-teal-500: #25a49c;
+  --color-teal-600: #1A9E96;
+  --color-teal-700: #178780;
+  --color-teal-800: #126b65;
+  --color-teal-900: #0d504c;
+  --color-teal-950: #083633;
 
   --color-charcoal-50: #f6f6f6;
   --color-charcoal-100: #e7e7e7;
@@ -30,7 +30,7 @@
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-shimmer: shimmer 2s linear infinite;
-  --animate-pulse-gold: pulse-gold 2s ease-in-out infinite;
+  --animate-pulse-teal: pulse-teal 2s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -43,9 +43,9 @@
   100% { background-position: 200% 0; }
 }
 
-@keyframes pulse-gold {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
-  50% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+@keyframes pulse-teal {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(43, 188, 179, 0.4); }
+  50% { box-shadow: 0 0 0 15px rgba(43, 188, 179, 0); }
 }
 
 html {
@@ -74,12 +74,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #d4af37, #b8860b);
+  background: linear-gradient(180deg, #2BBCB3, #1A9E96);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #e8c67e, #d4af37);
+  background: linear-gradient(180deg, #66cfc9, #2BBCB3);
 }
 
 .glass {
@@ -96,15 +96,15 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.text-gradient-gold {
-  background: linear-gradient(135deg, #d4af37, #f2ddb3, #d4af37);
+.text-gradient-teal {
+  background: linear-gradient(135deg, #2BBCB3, #99dfdb, #2BBCB3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.bg-gradient-gold {
-  background: linear-gradient(135deg, #d4af37, #b8860b);
+.bg-gradient-teal {
+  background: linear-gradient(135deg, #2BBCB3, #1A9E96);
 }
 
 .bg-gradient-dark {

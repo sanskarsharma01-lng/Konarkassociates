@@ -33,8 +33,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-charcoal-950 text-white relative">
-      {/* Gold accent line */}
-      <div className="h-1 bg-gradient-gold" />
+      {/* Teal accent line */}
+      <div className="h-1 bg-gradient-teal" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -48,7 +48,7 @@ export default function Footer() {
             </p>
             <a
               href="tel:09827953774"
-              className="inline-flex items-center gap-2 text-gold-400 hover:text-gold-300 text-sm font-medium transition-colors"
+              className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 text-sm font-medium transition-colors"
             >
               <Phone size={14} />
               098279 53774
@@ -60,7 +60,7 @@ export default function Footer() {
           <div>
             <h4 className="font-heading font-semibold text-lg mb-5 relative">
               Quick Links
-              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-gradient-gold rounded-full" />
+              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-gradient-teal rounded-full" />
             </h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
@@ -68,7 +68,7 @@ export default function Footer() {
                   <a
                     href={link.href}
                     onClick={(e) => handleLinkClick(e, link.href)}
-                    className="text-charcoal-400 hover:text-gold-400 text-sm transition-colors duration-300 hover:translate-x-1 inline-block"
+                    className="text-charcoal-400 hover:text-teal-400 text-sm transition-colors duration-300 hover:translate-x-1 inline-block"
                   >
                     {link.name}
                   </a>
@@ -83,7 +83,7 @@ export default function Footer() {
           <div>
             <h4 className="font-heading font-semibold text-lg mb-5 relative">
               Services
-              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-gradient-gold rounded-full" />
+              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-gradient-teal rounded-full" />
             </h4>
             <ul className="space-y-3">
               {serviceLinks.map((service) => (
@@ -99,23 +99,23 @@ export default function Footer() {
           <div>
             <h4 className="font-heading font-semibold text-lg mb-5 relative">
               Contact Us
-              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-gradient-gold rounded-full" />
+              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-gradient-teal rounded-full" />
             </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin size={16} className="text-gold-400 mt-0.5 flex-shrink-0" />
+                <MapPin size={16} className="text-teal-400 mt-0.5 flex-shrink-0" />
                 <span className="text-charcoal-400 text-sm">Konark Associates, Main Road, Barnagar, Madhya Pradesh</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={16} className="text-gold-400 flex-shrink-0" />
-                <a href="tel:09827953774" className="text-charcoal-400 hover:text-gold-400 text-sm transition-colors">
+                <Phone size={16} className="text-teal-400 flex-shrink-0" />
+                <a href="tel:09827953774" className="text-charcoal-400 hover:text-teal-400 text-sm transition-colors">
                   098279 53774
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={16} className="text-gold-400 flex-shrink-0" />
-                <a href="mailto:info@konarkassociates.com" className="text-charcoal-400 hover:text-gold-400 text-sm transition-colors">
-                  info@konarkassociates.com
+                <Mail size={16} className="text-teal-400 flex-shrink-0" />
+                <a href="mailto:konarkassociatesindore@gmail.com" className="text-charcoal-400 hover:text-teal-400 text-sm transition-colors">
+                  konarkassociatesindore@gmail.com
                 </a>
               </li>
             </ul>
@@ -131,7 +131,7 @@ export default function Footer() {
           </p>
           <button
             onClick={scrollToTop}
-            className="w-10 h-10 rounded-full bg-gold-400/10 border border-gold-400/20 flex items-center justify-center text-gold-400 hover:bg-gradient-gold hover:text-white transition-all duration-300 hover:scale-110"
+            className="w-10 h-10 rounded-full bg-teal-400/10 border border-teal-400/20 flex items-center justify-center text-teal-400 hover:bg-gradient-teal hover:text-white transition-all duration-300 hover:scale-110"
             aria-label="Scroll to top"
           >
             <ArrowUp size={18} />

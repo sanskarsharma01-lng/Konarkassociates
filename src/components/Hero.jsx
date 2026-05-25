@@ -3,8 +3,8 @@ import { Star, Building2, Paintbrush, ArrowRight } from 'lucide-react';
 
 const stats = [
   { icon: Star, value: '5.0', label: 'Google Reviews', color: 'text-yellow-400' },
-  { icon: Building2, value: '100+', label: 'Residential & Commercial Projects', color: 'text-gold-400' },
-  { icon: Paintbrush, value: 'Expert', label: 'Interior & Construction Team', color: 'text-gold-300' },
+  { icon: Building2, value: '100+', label: 'Residential & Commercial Projects', color: 'text-teal-400' },
+  { icon: Paintbrush, value: 'Expert', label: 'Interior & Construction Team', color: 'text-teal-300' },
 ];
 
 export default function Hero() {
@@ -26,25 +26,16 @@ export default function Hero() {
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 80, repeat: Infinity, ease: 'linear' }}
-          className="absolute -top-40 -right-40 w-96 h-96 border border-gold-400/10 rounded-full"
+          className="absolute -top-40 -right-40 w-96 h-96 border border-teal-400/10 rounded-full"
         />
         <motion.div
           animate={{ rotate: -360 }}
           transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
-          className="absolute -bottom-20 -left-20 w-72 h-72 border border-gold-400/10 rounded-full"
+          className="absolute -bottom-20 -left-20 w-72 h-72 border border-teal-400/10 rounded-full"
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <span className="inline-block px-5 py-2 rounded-full border border-gold-400/30 text-gold-300 text-sm font-medium tracking-wider uppercase mb-8 backdrop-blur-sm bg-white/5">
-            Architecture • Construction • Interiors
-          </span>
-        </motion.div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 md:pt-32">
 
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
@@ -54,7 +45,7 @@ export default function Hero() {
         >
           Designing Dreams
           <br />
-          <span className="text-gradient-gold">Into Reality</span>
+          <span className="text-gradient-teal">Into Reality</span>
         </motion.h1>
 
         <motion.p
@@ -80,7 +71,7 @@ export default function Hero() {
               e.preventDefault();
               document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="group flex items-center gap-2 bg-gradient-gold text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-gold-400/30 transition-all duration-300 hover:scale-105"
+            className="group flex items-center gap-2 bg-gradient-teal text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-teal-400/30 transition-all duration-300 hover:scale-105"
           >
             View Projects
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -91,7 +82,7 @@ export default function Hero() {
               e.preventDefault();
               document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="flex items-center gap-2 border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 hover:border-gold-400/50 transition-all duration-300"
+            className="flex items-center gap-2 border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 hover:border-teal-400/50 transition-all duration-300"
           >
             Contact Us
           </a>
@@ -110,7 +101,7 @@ export default function Hero() {
               whileHover={{ y: -5, scale: 1.02 }}
               className="glass rounded-2xl p-5 flex items-center gap-4 text-left cursor-default"
             >
-              <div className="w-12 h-12 rounded-xl bg-gradient-gold/20 flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 rounded-xl bg-gradient-teal/20 flex items-center justify-center flex-shrink-0">
                 <stat.icon size={22} className={stat.color} />
               </div>
               <div>

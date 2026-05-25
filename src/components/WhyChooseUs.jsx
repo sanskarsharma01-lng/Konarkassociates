@@ -64,13 +64,13 @@ export default function WhyChooseUs() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block text-gold-400 font-semibold text-sm tracking-widest uppercase mb-4">
+          <span className="inline-block text-teal-400 font-semibold text-sm tracking-widest uppercase mb-4">
             Why Us
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Why Choose <span className="text-gradient-gold">Konark Associates</span>
+            Why Choose <span className="text-gradient-teal">Konark Associates</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-gold rounded-full mx-auto mb-6" />
+          <div className="w-20 h-1 bg-gradient-teal rounded-full mx-auto mb-6" />
           <p className="text-charcoal-400 max-w-2xl mx-auto text-lg">
             Trusted by hundreds of homeowners and businesses for premium design and construction.
           </p>
@@ -87,8 +87,8 @@ export default function WhyChooseUs() {
               transition={{ delay: i * 0.1, duration: 0.5 }}
               className="text-center group"
             >
-              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gold-400/10 flex items-center justify-center group-hover:bg-gradient-gold transition-all duration-300">
-                <stat.icon size={28} className="text-gold-400 group-hover:text-white transition-colors" />
+              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-teal-400/10 flex items-center justify-center group-hover:bg-gradient-teal transition-all duration-300">
+                <stat.icon size={28} className="text-teal-400 group-hover:text-white transition-colors" />
               </div>
               <p className="text-3xl sm:text-4xl font-bold text-white font-heading mb-1">
                 <AnimatedCounter target={stat.value} suffix={stat.suffix} />
@@ -108,12 +108,12 @@ export default function WhyChooseUs() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.08, duration: 0.5 }}
               whileHover={{ y: -5 }}
-              className="glass rounded-2xl p-6 hover:border-gold-400/30 transition-all duration-300 group cursor-default"
+              className="glass rounded-2xl p-6 hover:border-teal-400/30 transition-all duration-300 group cursor-default"
             >
-              <div className="w-10 h-10 rounded-lg bg-gold-400/20 flex items-center justify-center mb-4">
-                <span className="text-gold-400 font-bold font-heading">{String(i + 1).padStart(2, '0')}</span>
+              <div className="w-10 h-10 rounded-lg bg-teal-400/20 flex items-center justify-center mb-4">
+                <span className="text-teal-400 font-bold font-heading">{String(i + 1).padStart(2, '0')}</span>
               </div>
-              <h3 className="text-white font-heading font-semibold text-lg mb-2 group-hover:text-gold-300 transition-colors">
+              <h3 className="text-white font-heading font-semibold text-lg mb-2 group-hover:text-teal-300 transition-colors">
                 {reason.title}
               </h3>
               <p className="text-charcoal-400 text-sm leading-relaxed">{reason.desc}</p>

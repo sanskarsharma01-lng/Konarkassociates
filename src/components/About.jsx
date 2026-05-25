@@ -41,14 +41,14 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Text Content */}
           <AnimatedSection>
-            <span className="inline-block text-gold-500 font-semibold text-sm tracking-widest uppercase mb-4">
+            <span className="inline-block text-teal-500 font-semibold text-sm tracking-widest uppercase mb-4">
               About Us
             </span>
             <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal-950 mb-6 leading-tight">
               Crafting Spaces That
-              <span className="text-gradient-gold"> Inspire</span>
+              <span className="text-gradient-teal"> Inspire</span>
             </h2>
-            <div className="w-20 h-1 bg-gradient-gold rounded-full mb-6" />
+            <div className="w-20 h-1 bg-gradient-teal rounded-full mb-6" />
             <p className="text-charcoal-500 text-lg leading-relaxed mb-6">
               <strong className="text-charcoal-800">KONARK ASSOCIATES</strong> is a leading interior architect and construction firm serving Barnagar, Ujjain, and Indore. We specialize in residential and commercial building design, bungalow construction, complete interior solutions, and architectural drawing &amp; planning.
             </p>
@@ -66,8 +66,8 @@ export default function About() {
                   transition={{ delay: i * 0.1, duration: 0.5 }}
                   className="flex items-center gap-3 group"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-gold-50 flex items-center justify-center group-hover:bg-gradient-gold group-hover:text-white transition-all duration-300">
-                    <item.icon size={18} className="text-gold-600 group-hover:text-white transition-colors" />
+                  <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center group-hover:bg-gradient-teal group-hover:text-white transition-all duration-300">
+                    <item.icon size={18} className="text-teal-600 group-hover:text-white transition-colors" />
                   </div>
                   <span className="text-charcoal-700 font-medium">{item.title}</span>
                 </motion.div>

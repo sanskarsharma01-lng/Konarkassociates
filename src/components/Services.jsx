@@ -44,13 +44,13 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block text-gold-500 font-semibold text-sm tracking-widest uppercase mb-4">
+          <span className="inline-block text-teal-500 font-semibold text-sm tracking-widest uppercase mb-4">
             What We Offer
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal-950 mb-4">
-            Our <span className="text-gradient-gold">Services</span>
+            Our <span className="text-gradient-teal">Services</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-gold rounded-full mx-auto mb-6" />
+          <div className="w-20 h-1 bg-gradient-teal rounded-full mx-auto mb-6" />
           <p className="text-charcoal-500 max-w-2xl mx-auto text-lg">
             Comprehensive design, construction, and real estate solutions tailored to exceed your expectations.
           </p>
@@ -68,21 +68,21 @@ export default function Services() {
               key={i}
               variants={item}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl hover:shadow-gold-400/10 border border-charcoal-100 hover:border-gold-300/50 transition-all duration-300 cursor-default"
+              className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl hover:shadow-teal-400/10 border border-charcoal-100 hover:border-teal-300/50 transition-all duration-300 cursor-default"
             >
-              <div className="w-14 h-14 rounded-xl bg-gold-50 group-hover:bg-gradient-gold flex items-center justify-center mb-5 transition-all duration-300">
+              <div className="w-14 h-14 rounded-xl bg-teal-50 group-hover:bg-gradient-teal flex items-center justify-center mb-5 transition-all duration-300">
                 <service.icon
                   size={24}
-                  className="text-gold-600 group-hover:text-white transition-colors duration-300"
+                  className="text-teal-600 group-hover:text-white transition-colors duration-300"
                 />
               </div>
-              <h3 className="font-heading text-lg font-semibold text-charcoal-900 mb-2 group-hover:text-gold-700 transition-colors duration-300">
+              <h3 className="font-heading text-lg font-semibold text-charcoal-900 mb-2 group-hover:text-teal-700 transition-colors duration-300">
                 {service.title}
               </h3>
               <p className="text-charcoal-500 text-sm leading-relaxed">
                 {service.desc}
               </p>
-              <div className="mt-4 w-0 group-hover:w-full h-0.5 bg-gradient-gold transition-all duration-500 rounded-full" />
+              <div className="mt-4 w-0 group-hover:w-full h-0.5 bg-gradient-teal transition-all duration-500 rounded-full" />
             </motion.div>
           ))}
         </motion.div>

@@ -77,13 +77,13 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block text-gold-500 font-semibold text-sm tracking-widest uppercase mb-4">
+          <span className="inline-block text-teal-500 font-semibold text-sm tracking-widest uppercase mb-4">
             Testimonials
           </span>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal-950 mb-4">
-            What Our <span className="text-gradient-gold">Clients Say</span>
+            What Our <span className="text-gradient-teal">Clients Say</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-gold rounded-full mx-auto mb-6" />
+          <div className="w-20 h-1 bg-gradient-teal rounded-full mx-auto mb-6" />
         </motion.div>
 
         {/* Carousel */}
@@ -99,14 +99,14 @@ export default function Testimonials() {
                 transition={{ duration: 0.4, ease: 'easeInOut' }}
                 className="w-full"
               >
-                <Quote size={40} className="text-gold-200 mb-6 mx-auto" />
+                <Quote size={40} className="text-teal-200 mb-6 mx-auto" />
                 <blockquote>
                   <p className="text-charcoal-600 text-lg sm:text-xl leading-relaxed text-center mb-8 italic">
                     &ldquo;{testimonials[current].text}&rdquo;
                   </p>
                 </blockquote>
                 <div className="flex items-center justify-center gap-4">
-                  <div className="w-14 h-14 rounded-full bg-gradient-gold flex items-center justify-center text-white font-bold text-lg">
+                  <div className="w-14 h-14 rounded-full bg-gradient-teal flex items-center justify-center text-white font-bold text-lg">
                     {testimonials[current].avatar}
                   </div>
                   <div className="text-left">
@@ -130,14 +130,14 @@ export default function Testimonials() {
           {/* Nav Arrows */}
           <button
             onClick={prev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-6 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-charcoal-600 hover:text-gold-500 hover:shadow-xl transition-all duration-300"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-6 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-charcoal-600 hover:text-teal-500 hover:shadow-xl transition-all duration-300"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={20} />
           </button>
           <button
             onClick={next}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-6 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-charcoal-600 hover:text-gold-500 hover:shadow-xl transition-all duration-300"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-6 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-charcoal-600 hover:text-teal-500 hover:shadow-xl transition-all duration-300"
             aria-label="Next testimonial"
           >
             <ChevronRight size={20} />
@@ -150,7 +150,7 @@ export default function Testimonials() {
                 key={i}
                 onClick={() => goTo(i)}
                 className={`h-2.5 rounded-full transition-all duration-300 ${
-                  i === current ? 'w-8 bg-gradient-gold' : 'w-2.5 bg-charcoal-300 hover:bg-gold-400'
+                  i === current ? 'w-8 bg-gradient-teal' : 'w-2.5 bg-charcoal-300 hover:bg-teal-400'
                 }`}
                 aria-label={`Go to testimonial ${i + 1}`}
               />

@@ -46,6 +46,18 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           <a href="#home" className="flex items-center gap-3 group" onClick={(e) => handleLinkClick(e, '#home')} aria-label="Konark Associates — Home">
             <img src={logo} alt="Konark Associates Logo" className="h-12 w-auto object-contain transform group-hover:scale-105 transition-transform duration-300" />
+            <div className="text-left">
+              <span className={`block text-sm font-heading font-bold tracking-widest uppercase transition-colors duration-300 ${
+                scrolled ? 'text-charcoal-950' : 'text-white'
+              }`}>
+                Konark
+              </span>
+              <span className={`block text-[10px] tracking-[0.2em] uppercase transition-colors duration-300 ${
+                scrolled ? 'text-teal-600' : 'text-teal-300'
+              }`}>
+                Associates
+              </span>
+            </div>
           </a>
 
           <div className="hidden lg:flex items-center gap-8">
@@ -54,17 +66,17 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className={`text-sm font-medium tracking-wide hover:text-gold-400 transition-colors duration-300 relative group ${
+                className={`text-sm font-medium tracking-wide hover:text-teal-400 transition-colors duration-300 relative group ${
                   scrolled ? 'text-charcoal-700' : 'text-white/90'
                 }`}
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-gold group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-teal group-hover:w-full transition-all duration-300" />
               </a>
             ))}
             <a
               href="tel:09827953774"
-              className="flex items-center gap-2 bg-gradient-gold text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:shadow-lg hover:shadow-gold-400/30 transition-all duration-300 hover:scale-105"
+              className="flex items-center gap-2 bg-gradient-teal text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:shadow-lg hover:shadow-teal-400/30 transition-all duration-300 hover:scale-105"
             >
               <Phone size={14} />
               Call Now
@@ -101,14 +113,14 @@ export default function Navbar() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
-                  className="block px-4 py-3 text-charcoal-800 font-medium hover:text-gold-500 hover:bg-gold-50 rounded-lg transition-all duration-200"
+                  className="block px-4 py-3 text-charcoal-800 font-medium hover:text-teal-500 hover:bg-teal-50 rounded-lg transition-all duration-200"
                 >
                   {link.name}
                 </motion.a>
               ))}
               <a
                 href="tel:09827953774"
-                className="flex items-center justify-center gap-2 mt-4 bg-gradient-gold text-white px-6 py-3 rounded-full font-semibold"
+                className="flex items-center justify-center gap-2 mt-4 bg-gradient-teal text-white px-6 py-3 rounded-full font-semibold"
               >
                 <Phone size={16} />
                 098279 53774
