@@ -1,20 +1,23 @@
 import { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
 import logo from '../assets/logo.jpg';
 
 const navLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Services', href: '#services' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Real Estate', href: '#real-estate' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Home', href: '/' },
+  { name: 'Construction', href: '/construction-company-ujjain' },
+  { name: 'Interior Design', href: '/interior-designer-ujjain' },
+  { name: 'Real Estate', href: '/real-estate-ujjain' },
+  { name: 'Projects', href: '/#projects' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -23,10 +26,21 @@ export default function Navbar() {
   }, []);
 
   const handleLinkClick = (e, href) => {
-    e.preventDefault();
     setIsOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (href.includes('#')) {
+      e.preventDefault();
+      const hash = href.includes('/') ? href.split('#')[1] : href.substring(1);
+      const basePath = href.split('#')[0] || '/';
+      if (location.pathname === basePath || (basePath === '/' && location.pathname === '/')) {
+        // Same page, just scroll
+        const el = document.getElementById(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // Different page, navigate
+        navigate(href);
+      }
+    }
+    // For non-hash links, Link handles navigation automatically
   };
 
   return (
@@ -44,7 +58,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <a href="#home" className="flex items-center gap-3 group" onClick={(e) => handleLinkClick(e, '#home')} aria-label="Konark Associates — Home">
+          <Link to="/" className="flex items-center gap-3 group" aria-label="Konark Associates — Home">
             <img src={logo} alt="Konark Associates Logo" className="h-12 w-auto object-contain transform group-hover:scale-105 transition-transform duration-300" />
             <div className="text-left">
               <span className={`block text-sm font-heading font-bold tracking-widest uppercase transition-colors duration-300 ${
@@ -58,13 +72,13 @@ export default function Navbar() {
                 Associates
               </span>
             </div>
-          </a>
+          </Link>
 
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
                 className={`text-sm font-medium tracking-wide hover:text-teal-400 transition-colors duration-300 relative group ${
                   scrolled ? 'text-charcoal-700' : 'text-white/90'
@@ -72,7 +86,7 @@ export default function Navbar() {
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-teal group-hover:w-full transition-all duration-300" />
-              </a>
+              </Link>
             ))}
             <a
               href="tel:09827953774"
@@ -106,17 +120,20 @@ export default function Navbar() {
           >
             <div className="px-4 py-6 space-y-1">
               {navLinks.map((link, i) => (
-                <motion.a
+                <motion.div
                   key={link.name}
-                  href={link.href}
-                  onClick={(e) => handleLinkClick(e, link.href)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
-                  className="block px-4 py-3 text-charcoal-800 font-medium hover:text-teal-500 hover:bg-teal-50 rounded-lg transition-all duration-200"
                 >
-                  {link.name}
-                </motion.a>
+                  <Link
+                    to={link.href}
+                    onClick={(e) => handleLinkClick(e, link.href)}
+                    className="block px-4 py-3 text-charcoal-800 font-medium hover:text-teal-500 hover:bg-teal-50 rounded-lg transition-all duration-200"
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
               ))}
               <a
                 href="tel:09827953774"

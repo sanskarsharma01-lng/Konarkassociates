@@ -1,16 +1,15 @@
 import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from './assets/logo.jpg';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Projects from './components/Projects';
-import WhyChooseUs from './components/WhyChooseUs';
-import Testimonials from './components/Testimonials';
-import RealEstate from './components/RealEstate';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import HomePage from './pages/HomePage';
+import ConstructionPage from './pages/ConstructionPage';
+import InteriorDesignPage from './pages/InteriorDesignPage';
+import RealEstatePage from './pages/RealEstatePage';
+import ContactPage from './pages/ContactPage';
 
 function LoadingScreen() {
   return (
@@ -47,9 +46,12 @@ function LoadingScreen() {
 }
 
 export default function App() {
-  const [loading, setLoading] = useState(true);
+  // Disable loading screen during SSR (server-side rendering)
+  const isServer = typeof window === 'undefined';
+  const [loading, setLoading] = useState(isServer ? false : true);
 
   useEffect(() => {
+    if (!loading) return;
     const timer = setTimeout(() => setLoading(false), 1800);
     return () => clearTimeout(timer);
   }, []);
@@ -66,16 +68,16 @@ export default function App() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
+          <ScrollToTop />
           <Navbar />
           <main>
-            <Hero />
-            <About />
-            <Services />
-            <Projects />
-            <WhyChooseUs />
-            <Testimonials />
-            <RealEstate />
-            <Contact />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/construction-company-ujjain" element={<ConstructionPage />} />
+              <Route path="/interior-designer-ujjain" element={<InteriorDesignPage />} />
+              <Route path="/real-estate-ujjain" element={<RealEstatePage />} />
+              <Route path="/contact" element={<ContactPage />} />
+            </Routes>
           </main>
           <Footer />
         </motion.div>

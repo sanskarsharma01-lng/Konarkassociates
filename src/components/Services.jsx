@@ -7,7 +7,7 @@ import {
 
 const services = [
   { icon: Home, title: 'Residential Building Design & Construction', desc: 'Custom homes designed with precision, built with excellence. From foundation to finish, we craft your dream residence.' },
-  { icon: Building2, title: 'Commercial Building Design & Construction', desc: 'Innovative commercial spaces that maximize functionality while making a bold architectural statement.' },
+  { icon: Building2, title: 'Commercial Building Design & Construction', desc: 'Innovative commercial spaces that maximize functionality while making a bold design statement.' },
   { icon: Castle, title: 'Bungalow Design', desc: 'Luxurious bungalow designs that blend elegance with comfort, tailored to your lifestyle aspirations.' },
   { icon: HardHat, title: 'Construction Consulting & Execution', desc: 'End-to-end construction management with expert consulting, budgeting, and flawless execution.' },
   { icon: Monitor, title: '3D Design Rendering & Walkthrough', desc: 'Photorealistic 3D visualizations and immersive walkthroughs to experience your project before construction.' },

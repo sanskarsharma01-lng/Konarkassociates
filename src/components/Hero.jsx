@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Star, Building2, Paintbrush, ArrowRight } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const stats = [
   { icon: Star, value: '5.0', label: 'Google Reviews', color: 'text-yellow-400' },
@@ -14,9 +15,9 @@ export default function Hero() {
       <div className="absolute inset-0">
         <img
           src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80"
-          alt="Konark Associates — Modern luxury architecture design in Ujjain, Indore and Barnagar"
+          alt="Konark Associates — Modern luxury construction and interior design in Ujjain, Indore and Barnagar"
           className="w-full h-full object-cover"
-          fetchpriority="high"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/70 via-charcoal-950/50 to-charcoal-950/80" />
       </div>
@@ -54,8 +55,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-lg sm:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Top-rated interior architect &amp; construction company in Ujjain, Indore &amp; Barnagar.
-          Transforming visions into extraordinary spaces through innovative architecture,
+          Top-rated construction company &amp; interior designer in Ujjain, Indore &amp; Barnagar.
+          Transforming visions into extraordinary spaces through innovative design,
           precision construction, stunning interiors &amp; smart real estate solutions.
         </motion.p>
 
@@ -65,27 +66,26 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <a
-            href="#projects"
+          <Link
+            to="/#projects"
             onClick={(e) => {
-              e.preventDefault();
-              document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
+              const location = window.location;
+              if (location.pathname === '/') {
+                e.preventDefault();
+                document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+              }
             }}
             className="group flex items-center gap-2 bg-gradient-teal text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-teal-400/30 transition-all duration-300 hover:scale-105"
           >
             View Projects
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </a>
-          <a
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
-            }}
+          </Link>
+          <Link
+            to="/contact"
             className="flex items-center gap-2 border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 hover:border-teal-400/50 transition-all duration-300"
           >
             Contact Us
-          </a>
+          </Link>
         </motion.div>
 
         {/* Floating Stats */}

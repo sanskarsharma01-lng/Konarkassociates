@@ -1,13 +1,14 @@
 import { Phone, Mail, MapPin, ArrowUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/logo.jpg';
 
 const quickLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'About Us', href: '#about' },
-  { name: 'Services', href: '#services' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Real Estate', href: '#real-estate' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Home', href: '/' },
+  { name: 'Construction', href: '/construction-company-ujjain' },
+  { name: 'Interior Design', href: '/interior-designer-ujjain' },
+  { name: 'Real Estate', href: '/real-estate-ujjain' },
+  { name: 'Projects', href: '/#projects' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 const serviceLinks = [
@@ -16,19 +17,14 @@ const serviceLinks = [
   'Bungalow Design & Construction',
   'Construction with Material Supply',
   'Complete Interior Design & Construction',
-  'Architectural Drawing & Planning',
-  'Interior Architecture Consultation',
+  'Construction Drawing & Planning',
+  'Interior Design Consultation',
   'Renovation & Remodelling',
 ];
 
 export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleLinkClick = (e, href) => {
-    e.preventDefault();
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -44,7 +40,7 @@ export default function Footer() {
               <img src={logo} alt="Konark Associates Logo" className="h-14 w-auto object-contain" />
             </div>
             <p className="text-charcoal-400 text-sm leading-relaxed mb-6">
-              Leading interior architect and construction firm serving Barnagar, Ujjain & Indore. Residential, commercial & bungalow design with end-to-end project delivery.
+              Leading construction company and interior design firm serving Barnagar, Ujjain & Indore. Residential, commercial & bungalow design with end-to-end project delivery.
             </p>
             <a
               href="tel:09827953774"
@@ -65,13 +61,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => handleLinkClick(e, link.href)}
+                  <Link
+                    to={link.href}
                     className="text-charcoal-400 hover:text-teal-400 text-sm transition-colors duration-300 hover:translate-x-1 inline-block"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

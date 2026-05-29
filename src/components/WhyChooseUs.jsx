@@ -37,9 +37,9 @@ const stats = [
 ];
 
 const reasons = [
-  { title: 'Modern Design Solutions', desc: 'We stay ahead of trends with cutting-edge architectural and interior design approaches.' },
+  { title: 'Modern Design Solutions', desc: 'We stay ahead of trends with cutting-edge construction and interior design approaches.' },
   { title: 'End-to-End Execution', desc: 'From concept to completion, we manage every aspect of your project seamlessly.' },
-  { title: 'Expert Team', desc: 'Our skilled architects, engineers, and designers bring decades of combined experience.' },
+  { title: 'Expert Team', desc: 'Our skilled engineers, designers, and construction specialists bring decades of combined experience.' },
   { title: 'Quality Assurance', desc: 'Premium materials and meticulous craftsmanship ensure lasting excellence.' },
   { title: 'On-Time Delivery', desc: 'We respect your time and commitments with punctual project delivery.' },
   { title: 'Client-Centric Approach', desc: 'Your vision drives every design decision we make.' },

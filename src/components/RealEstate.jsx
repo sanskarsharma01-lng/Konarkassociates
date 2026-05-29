@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { BedDouble, Bath, Maximize, MapPin, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const properties = [
   {
@@ -119,17 +120,13 @@ export default function RealEstate() {
             <p className="text-charcoal-400 mb-8 max-w-xl mx-auto">
               Our real estate experts help you find the perfect property or get the best value for your investment. Free consultation available.
             </p>
-            <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
-              }}
+            <Link
+              to="/contact"
               className="inline-flex items-center gap-2 bg-gradient-teal text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-teal-400/30 transition-all duration-300 hover:scale-105 group"
             >
               Contact for Property Deals
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>
