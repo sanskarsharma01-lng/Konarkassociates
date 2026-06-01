@@ -8,6 +8,7 @@ export default function RealEstatePage() {
       <SEOHead
         title="Real Estate Buy & Sell in Ujjain, Indore & Barnagar | Konark Associates"
         description="Looking for property in Ujjain, Indore or Barnagar? We offer premium real estate services for buying and selling residential and commercial properties."
+        canonical="https://konarkassociates.com/real-estate-ujjain/"
       />
 
       {/* Hero Section */}

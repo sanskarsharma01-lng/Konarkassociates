@@ -27,6 +27,7 @@ export default function InteriorDesignPage() {
       <SEOHead
         title="Interior Designer in Ujjain, Indore & Barnagar | Konark Associates"
         description="Best interior designer in Ujjain, Indore & Barnagar. We offer complete interior design, modular kitchen, wardrobe design, and 3D rendering services. Transform your home today."
+        canonical="https://konarkassociates.com/interior-designer-ujjain/"
       />
 
       {/* Hero Section */}

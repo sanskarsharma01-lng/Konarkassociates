@@ -27,6 +27,7 @@ export default function ConstructionPage() {
       <SEOHead
         title="Construction Company in Ujjain, Indore & Barnagar | Konark Associates"
         description="Top-rated construction company and building contractor in Ujjain, Indore & Barnagar. We specialize in residential & commercial construction, bungalow building, and construction with material supply. Call 098279 53774."
+        canonical="https://konarkassociates.com/construction-company-ujjain/"
       />
 
       {/* Hero Section */}

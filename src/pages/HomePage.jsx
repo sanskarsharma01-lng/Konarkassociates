@@ -14,6 +14,7 @@ export default function HomePage() {
       <SEOHead
         title="Konark Associates | Construction Company & Interior Designer in Ujjain, Indore, Barnagar"
         description="Top-rated construction company, interior designer & builder in Ujjain, Indore & Barnagar. House construction, commercial construction, bungalow construction, residential building construction with material supply & complete interior work. 5★ rated. Call 098279 53774."
+        canonical="https://konarkassociates.com/"
       />
       <Hero />
       <About />

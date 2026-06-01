@@ -8,6 +8,7 @@ export default function ContactPage() {
       <SEOHead
         title="Contact Konark Associates | Construction & Interior Design in Ujjain"
         description="Contact Konark Associates for construction, interior design, and real estate services in Ujjain, Indore, and Barnagar. Call 098279 53774."
+        canonical="https://konarkassociates.com/contact/"
       />
 
       {/* Small Hero */}
