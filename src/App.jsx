@@ -1,0 +1,89 @@
+import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import logo from './assets/logo.jpg';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import HomePage from './pages/HomePage';
+import ConstructionPage from './pages/ConstructionPage';
+import InteriorDesignPage from './pages/InteriorDesignPage';
+import RealEstatePage from './pages/RealEstatePage';
+import ContactPage from './pages/ContactPage';
+import ProjectDetailPage from './pages/ProjectDetailPage';
+
+function LoadingScreen() {
+  return (
+    <motion.div
+      className="fixed inset-0 z-[100] bg-charcoal-950 flex flex-col items-center justify-center"
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      <motion.div
+        initial={{ scale: 0.5, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className="text-center flex flex-col items-center"
+      >
+        <motion.img
+          src={logo}
+          alt="Konark Associates"
+          className="h-28 sm:h-36 w-auto object-contain drop-shadow-[0_0_30px_rgba(43,188,179,0.3)]"
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
+        />
+        <div className="mt-8 w-48 h-0.5 bg-charcoal-800 rounded-full overflow-hidden mx-auto">
+          <motion.div
+            className="h-full bg-gradient-teal rounded-full"
+            initial={{ width: '0%' }}
+            animate={{ width: '100%' }}
+            transition={{ duration: 1.5, ease: 'easeInOut' }}
+          />
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
+
+export default function App() {
+  // Disable loading screen during SSR (server-side rendering)
+  const isServer = typeof window === 'undefined';
+  const [loading, setLoading] = useState(isServer ? false : true);
+
+  useEffect(() => {
+    if (!loading) return;
+    const timer = setTimeout(() => setLoading(false), 1800);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <>
+      <AnimatePresence>
+        {loading && <LoadingScreen />}
+      </AnimatePresence>
+
+      {!loading && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <ScrollToTop />
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/construction-company-ujjain" element={<ConstructionPage />} />
+              <Route path="/interior-designer-ujjain" element={<InteriorDesignPage />} />
+              <Route path="/real-estate-ujjain" element={<RealEstatePage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/project/:projectId" element={<ProjectDetailPage />} />
+            </Routes>
+          </main>
+          <Footer />
+        </motion.div>
+      )}
+    </>
+  );
+}
