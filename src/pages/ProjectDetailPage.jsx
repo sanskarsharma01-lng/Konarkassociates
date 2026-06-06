@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   ArrowLeft,
@@ -195,7 +195,8 @@ export default function ProjectDetailPage() {
             </Link>
             <span className="text-charcoal-500">/</span>
             <Link
-              to="/#projects"
+              to="/"
+              onClick={() => setTimeout(() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }), 100)}
               className="hover:text-teal-400 transition-colors"
             >
               Projects
@@ -265,7 +266,8 @@ export default function ProjectDetailPage() {
 
             {/* Back button */}
             <Link
-              to="/#projects"
+              to="/"
+              onClick={() => setTimeout(() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }), 100)}
               className="ml-auto hidden sm:inline-flex items-center gap-2 text-sm text-charcoal-400 hover:text-teal-400 transition-colors group"
             >
               <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />

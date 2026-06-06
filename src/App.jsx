@@ -11,6 +11,7 @@ import InteriorDesignPage from './pages/InteriorDesignPage';
 import RealEstatePage from './pages/RealEstatePage';
 import ContactPage from './pages/ContactPage';
 import ProjectDetailPage from './pages/ProjectDetailPage';
+import PropertyDetailPage from './pages/PropertyDetailPage';
 
 function LoadingScreen() {
   return (
@@ -79,6 +80,7 @@ export default function App() {
               <Route path="/real-estate-ujjain" element={<RealEstatePage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/project/:projectId" element={<ProjectDetailPage />} />
+              <Route path="/property/:propertyId" element={<PropertyDetailPage />} />
             </Routes>
           </main>
           <Footer />

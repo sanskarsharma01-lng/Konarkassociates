@@ -1,10 +1,17 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, BedDouble, Bath, Maximize, MapPin, ArrowUpRight, Building2, LandPlot } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import SEOHead from '../components/SEOHead';
-import RealEstate from '../components/RealEstate';
+import { properties, propertyTypes } from '../data/propertiesData';
 
 export default function RealEstatePage() {
+  const [activeFilter, setActiveFilter] = useState('All');
+
+  const filteredProperties = activeFilter === 'All'
+    ? properties
+    : properties.filter((p) => p.type === activeFilter);
+
   return (
     <div className="bg-white">
       <SEOHead
@@ -43,8 +50,126 @@ export default function RealEstatePage() {
         </div>
       </section>
 
-      {/* Import the existing RealEstate component for the properties grid and CTA */}
-      <RealEstate />
+      {/* Properties Grid with Filter */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <span className="inline-block text-teal-500 font-semibold text-sm tracking-widest uppercase mb-4">
+              Browse Properties
+            </span>
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal-950 mb-4">
+              Available <span className="text-gradient-teal">Properties</span>
+            </h2>
+            <div className="w-20 h-1 bg-gradient-teal rounded-full mx-auto mb-8" />
+
+            {/* Filter Buttons */}
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              {propertyTypes.map((type) => (
+                <button
+                  key={type}
+                  onClick={() => setActiveFilter(type)}
+                  className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+                    activeFilter === type
+                      ? 'bg-gradient-teal text-white shadow-lg shadow-teal-400/25'
+                      : 'bg-charcoal-50 text-charcoal-600 hover:bg-charcoal-100 border border-charcoal-100'
+                  }`}
+                >
+                  {type}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredProperties.map((prop, i) => (
+              <motion.div
+                key={prop.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                whileHover={{ y: -8 }}
+                layout
+              >
+                <Link
+                  to={`/property/${prop.id}`}
+                  className="group block bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:shadow-teal-400/15 border border-charcoal-100 transition-all duration-300"
+                >
+                  <div className="relative overflow-hidden h-56">
+                    <img
+                      src={prop.img}
+                      alt={prop.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-3 left-3 flex gap-2">
+                      <span className="px-3 py-1 rounded-full bg-gradient-teal text-white text-xs font-bold tracking-wider">
+                        {prop.type}
+                      </span>
+                      <span className={`px-3 py-1 rounded-full text-xs font-bold tracking-wider ${
+                        prop.status === 'Ready to Move'
+                          ? 'bg-emerald-500/90 text-white'
+                          : prop.status === 'Under Construction'
+                          ? 'bg-amber-500/90 text-white'
+                          : 'bg-blue-500/90 text-white'
+                      }`}>
+                        {prop.status}
+                      </span>
+                    </div>
+                    <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-charcoal-900 text-xs font-bold">
+                      {prop.priceLabel}
+                    </div>
+                    {/* Hover overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-end p-4">
+                      <span className="inline-flex items-center gap-1 text-white text-sm font-semibold bg-teal-500/80 backdrop-blur-sm px-4 py-2 rounded-full">
+                        View Details <ArrowUpRight size={14} />
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-heading font-semibold text-charcoal-900 text-lg mb-1">{prop.title}</h3>
+                    <div className="flex items-center gap-1 text-charcoal-400 text-sm mb-4">
+                      <MapPin size={14} />
+                      <span>{prop.location}</span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm text-charcoal-500 border-t border-charcoal-100 pt-4">
+                      {prop.beds > 0 ? (
+                        <span className="flex items-center gap-1"><BedDouble size={14} /> {prop.beds} Bed</span>
+                      ) : prop.type === 'Plot' ? (
+                        <span className="flex items-center gap-1"><LandPlot size={14} /> Plot</span>
+                      ) : (
+                        <span className="flex items-center gap-1"><Building2 size={14} /> Commercial</span>
+                      )}
+                      {prop.baths > 0 ? (
+                        <span className="flex items-center gap-1"><Bath size={14} /> {prop.baths} Bath</span>
+                      ) : (
+                        <span className="flex items-center gap-1"><MapPin size={14} /> {prop.city}</span>
+                      )}
+                      <span className="flex items-center gap-1"><Maximize size={14} /> {prop.area}</span>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          {filteredProperties.length === 0 && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-center py-16"
+            >
+              <p className="text-charcoal-400 text-lg">No properties found in this category.</p>
+            </motion.div>
+          )}
+        </div>
+      </section>
 
       {/* FAQ Section */}
       <FAQSection />

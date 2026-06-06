@@ -5,6 +5,7 @@
     { "source": "/real-estate-ujjain", "destination": "/real-estate-ujjain/index.html" },
     { "source": "/contact", "destination": "/contact/index.html" },
     { "source": "/project/:path", "destination": "/index.html" },
+    { "source": "/property/:path", "destination": "/index.html" },
     { "source": "/((?!assets|favicon|robots|sitemap|logo|icons|og-image).*)", "destination": "/index.html" }
   ],
   "headers": [

@@ -1,41 +1,7 @@
 import { motion } from 'framer-motion';
-import { BedDouble, Bath, Maximize, MapPin, ArrowRight } from 'lucide-react';
+import { BedDouble, Bath, Maximize, MapPin, ArrowRight, Building2, LandPlot } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-const properties = [
-  {
-    type: '1 BHK',
-    title: 'Compact Urban Living',
-    price: 'Starting ₹18L',
-    img: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80',
-    beds: 1, baths: 1, area: '450 sq.ft',
-    location: 'Prime City Area',
-  },
-  {
-    type: '2 BHK',
-    title: 'Modern Family Apartment',
-    price: 'Starting ₹32L',
-    img: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=80',
-    beds: 2, baths: 2, area: '850 sq.ft',
-    location: 'Residential Zone',
-  },
-  {
-    type: '3 BHK',
-    title: 'Spacious Premium Flat',
-    price: 'Starting ₹55L',
-    img: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80',
-    beds: 3, baths: 2, area: '1200 sq.ft',
-    location: 'Premium Locality',
-  },
-  {
-    type: '4 BHK',
-    title: 'Luxury Penthouse',
-    price: 'Starting ₹85L',
-    img: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80',
-    beds: 4, baths: 3, area: '1800 sq.ft',
-    location: 'Elite Neighbourhood',
-  },
-];
+import { properties } from '../data/propertiesData';
 
 export default function RealEstate() {
   return (
@@ -61,9 +27,9 @@ export default function RealEstate() {
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {properties.map((prop, i) => (
+          {properties.slice(0, 4).map((prop, i) => (
             <motion.div
-              key={i}
+              key={prop.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -71,35 +37,64 @@ export default function RealEstate() {
               whileHover={{ y: -8 }}
               className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:shadow-teal-400/15 border border-charcoal-100 transition-all duration-300"
             >
-              <div className="relative overflow-hidden h-48">
-                <img
-                  src={prop.img}
-                  alt={prop.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  loading="lazy"
-                />
-                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-gradient-teal text-white text-xs font-bold tracking-wider">
-                  {prop.type}
+              <Link to={`/property/${prop.id}`} className="block">
+                <div className="relative overflow-hidden h-48">
+                  <img
+                    src={prop.img}
+                    alt={prop.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-gradient-teal text-white text-xs font-bold tracking-wider">
+                    {prop.type}
+                  </div>
+                  <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-charcoal-900 text-xs font-bold">
+                    {prop.priceLabel}
+                  </div>
                 </div>
-                <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-charcoal-900 text-xs font-bold">
-                  {prop.price}
+                <div className="p-5">
+                  <h3 className="font-heading font-semibold text-charcoal-900 text-lg mb-1">{prop.title}</h3>
+                  <div className="flex items-center gap-1 text-charcoal-400 text-sm mb-4">
+                    <MapPin size={14} />
+                    <span>{prop.location}</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm text-charcoal-500 border-t border-charcoal-100 pt-4">
+                    {prop.beds > 0 ? (
+                      <span className="flex items-center gap-1"><BedDouble size={14} /> {prop.beds} Bed</span>
+                    ) : prop.type === 'Plot' ? (
+                      <span className="flex items-center gap-1"><LandPlot size={14} /> Plot</span>
+                    ) : (
+                      <span className="flex items-center gap-1"><Building2 size={14} /> Commercial</span>
+                    )}
+                    {prop.baths > 0 ? (
+                      <span className="flex items-center gap-1"><Bath size={14} /> {prop.baths} Bath</span>
+                    ) : (
+                      <span className="flex items-center gap-1"><MapPin size={14} /> {prop.city}</span>
+                    )}
+                    <span className="flex items-center gap-1"><Maximize size={14} /> {prop.area}</span>
+                  </div>
                 </div>
-              </div>
-              <div className="p-5">
-                <h3 className="font-heading font-semibold text-charcoal-900 text-lg mb-1">{prop.title}</h3>
-                <div className="flex items-center gap-1 text-charcoal-400 text-sm mb-4">
-                  <MapPin size={14} />
-                  <span>{prop.location}</span>
-                </div>
-                <div className="flex items-center justify-between text-sm text-charcoal-500 border-t border-charcoal-100 pt-4">
-                  <span className="flex items-center gap-1"><BedDouble size={14} /> {prop.beds} Bed</span>
-                  <span className="flex items-center gap-1"><Bath size={14} /> {prop.baths} Bath</span>
-                  <span className="flex items-center gap-1"><Maximize size={14} /> {prop.area}</span>
-                </div>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </div>
+
+        {/* View All Properties Link */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <Link
+            to="/real-estate-ujjain"
+            className="inline-flex items-center gap-2 text-teal-500 font-semibold hover:text-teal-600 transition-colors group"
+          >
+            View All Properties
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </motion.div>
 
         {/* Buy/Sell CTA */}
         <motion.div
